@@ -38,11 +38,22 @@ inquirer.prompt([
         name: 'tests',
         message: 'Enter tests of the project'
     },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is your work email?'
+    },
+    {
+        type: 'input',
+        name: 'github',
+        message: 'What is your github username?'
+    },
 ]).then(data => {
 const template = `
 # ${data.title}
 
-## ${data.description}
+## Description 
+${data.description}
 
 ## Table of Contents
 
@@ -52,17 +63,26 @@ const template = `
 * [Tests](#tests)
 * [Questions](#questions)
 
-## ${data.installation}
+## Installation 
+${data.installation}
 
-## ${data.usage}
+## Usage 
+${data.usage}
 
-## ${data.license}
+## License 
+${data.license}
 
-## ${data.contributing}
+## Contributing 
+${data.contributing}
 
-## ${data.tests}
+## Tests 
+${data.tests}
 
-## ${data.questions}
+## Questions
+If you have any questions about this project you may reach me below at: </br> 
+${data.email}</br>
+Also you may check out my github link below at: </br>
+https://github.com/${data.github}
 `;
 fs.writeFile('README.md', template, err => {
     if (err);
@@ -70,13 +90,13 @@ fs.writeFile('README.md', template, err => {
 });
 
 
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-inquirer.prompt
+// // TODO: Create a function to write README file
+// // function writeToFile(fileName, data) {}
+// inquirer.prompt
 
 
-// TODO: Create a function to initialize app
-function init() {}
+// // TODO: Create a function to initialize app
+// function init() {}
 
-// Function call to initialize app
-init();
+// // Function call to initialize app
+// init();
