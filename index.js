@@ -47,10 +47,22 @@ const template = `
 ## Table of Contents
 
 * [Installation](#installation)
-usage
-contributing
-tests
-questions
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
+
+## ${data.installation}
+
+## ${data.usage}
+
+## ${data.license}
+
+## ${data.contributing}
+
+## ${data.tests}
+
+## ${data.questions}
 `;
 fs.writeFile('README.md', template, err => {
     if (err);
