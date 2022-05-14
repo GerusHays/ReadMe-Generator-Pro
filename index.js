@@ -1,57 +1,134 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown');
 const fs  = require('fs');
 // TODO: Create an array of questions for user input
 inquirer.prompt([
     {
         type: 'input',
         name: 'title',
-        message: 'Enter title of the ReadME'
+        message: 'Enter the title of your project. (Required)',
+        validate : titleInput => {
+            if(titleInput) {
+                return true;
+            } else {
+                console.log('Please enter the title of your project!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'list',
+        name: 'badge',
+        message: 'Select which license you utilized for this project.',
+        choices: ['Apache', 'MIT', 'ISC', 'Mozilla']
     },
     {
         type: 'input',
         name: 'description',
-        message: 'Enter description of the project'
+        message: 'Enter a brief description of your project. (Required)',
+        validate : descriptionInput => {
+            if(descriptionInput) {
+                return true;
+            } else {
+                console.log('Please enter the description of your project!');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'installation',
-        message: 'Enter installation procedures for the readME'
+        message: 'Enter installation procedures for the project. (Required)',
+        validate : installInput => {
+            if(installInput) {
+                return true;
+            } else {
+                console.log('Please enter the installation procedures for your project!');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'usage',
-        message: 'Enter how the user would use the project in ReadMe'
+        message: 'Enter how the user would use the project in ReadMe. (Required)',
+        validate : usageInput => {
+            if(usageInput) {
+                return true;
+            } else {
+                console.log('Please enter how the user may use your project!');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'license',
-        message: 'Enter the license for your project'
+        message: 'Enter how this project is licensed (Required)',
+        validate : licenseInput => {
+            if(licenseInput) {
+                return true;
+            } else {
+                console.log('Please enter the project is licensed!');
+                return false;
+            }
+        }
+    },
+    {
+        type: 'confirm',
+        name: 'confirmContributing',
+        message: 'Did you have any contributions when creating this from other developers?',
+        default: true
     },
     {
         type: 'input',
         name: 'contributing',
-        message: 'Enter how users contributed to the project'
+        message: 'Enter how users contributed to the project.',
+        when: ({ confirmContributing }) => confirmContributing
+    },
+    {
+        type: 'confirm',
+        name: 'confirmTests',
+        message: 'Did you use any tests to ensure your project worked?',
+        default: true
     },
     {
         type: 'input',
         name: 'tests',
-        message: 'Enter tests of the project'
+        message: 'Enter tests of the project',
+        when: ({ confirmTests }) => confirmTests
     },
     {
         type: 'input',
         name: 'email',
-        message: 'What is your work email?'
+        message: 'What is your work email? (Required)',
+        validate : emailInput => {
+            if(emailInput) {
+                return true;
+            } else {
+                console.log('Please enter the email associated to you so users may ask you questions about your project!');
+                return false;
+            }
+        }
     },
     {
         type: 'input',
         name: 'github',
-        message: 'What is your github username?'
+        message: 'What is your github username? (Required)',
+        validate : githubInput => {
+            if(githubInput) {
+                return true;
+            } else {
+                console.log('Please enter the github username associated to you so users may view your source code!');
+                return false;
+            }
+        }
     },
 ]).then(data => {
 const template = `
 # ${data.title}
-
+${generateMarkdown.renderLicenseBadge(data.badge)}
 ## Description 
 ${data.description}
 
@@ -69,7 +146,8 @@ ${data.installation}
 ## Usage 
 ${data.usage}
 
-## License 
+## License
+This is licensed under 
 ${data.license}
 
 ## Contributing 
@@ -88,15 +166,3 @@ fs.writeFile('README.md', template, err => {
     if (err);
 })
 });
-
-
-// // TODO: Create a function to write README file
-// // function writeToFile(fileName, data) {}
-// inquirer.prompt
-
-
-// // TODO: Create a function to initialize app
-// function init() {}
-
-// // Function call to initialize app
-// init();
