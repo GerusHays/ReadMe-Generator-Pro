@@ -1,8 +1,8 @@
-// TODO: Include packages needed for this application
+// added consts here to "talk to" inquire, generateMarkdown and file system 
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 const fs  = require('fs');
-// TODO: Create an array of questions for user input
+// prompt the user to fill in the readme
 inquirer.prompt([
     {
         type: 'input',
@@ -125,6 +125,7 @@ inquirer.prompt([
             }
         }
     },
+// I used a .then function instead of utilzing the generateMarkdown
 ]).then(data => {
 const template = `
 # ${data.title}
@@ -162,6 +163,7 @@ ${data.email}</br>
 Also you may check out my github link below at: </br>
 https://github.com/${data.github}
 `;
+// writeFile function to generate the user input data to the README File
 fs.writeFile('README.md', template, err => {
     if (err);
 })
