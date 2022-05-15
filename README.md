@@ -5,8 +5,6 @@
 Generates a professional readme File for your applications
 
 ## Table of Contents
-
-<<<<<<< HEAD
 * [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
@@ -34,7 +32,4 @@ If you have any questions about this project you may reach me below at: </br>
 gerushays</br>
 Also you may check out my github link below at: </br>
 https://github.com/GerusHays
-=======
-## Contribution
-Made with ❤️ by Gerus Hays
->>>>>>> 0a589e8ac72520c22a14dced4e3a063c808da966
+
