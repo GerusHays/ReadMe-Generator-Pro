@@ -15,8 +15,5 @@ Upon completing all of the required inputs the user may open their readMe file a
 ## Moving Forward
 - I need to figure out why the confirmation shows up as false instead of just not displaying anything.
 
-## Screenshot
-![Work-scheduler-screenshot](./Develop/images/Work-scheduler-screenshot.png)
-
 ## Contribution
 Made with ❤️ by Gerus Hays
