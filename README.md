@@ -1,22 +1,35 @@
-# Work Day Scheduler Starter Code
-## Purpose
-The purpose of this application is to generate a professional ReadMe for any projects the user is working on. </br>
-To be able to use this the user needs to download it first and install the npm package by entering in npm install within the root of the file path. </br>
-Once that step is complete the user will need to interact with the terminal and enter in what they want as their inputs. </br>
-Upon completing all of the required inputs the user may open their readMe file and be presented with what they entered. 
-## Built With
-* Inquirer package
-* JS
 
-## Resources and Student cohesion
-- https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba used this link to get the license badges
-- I finished the project with the help of my tutor and office hours with TA and Tess Shearer
+# ReadME generation
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+## Description 
+Generates a professional readme File for your applications
 
-## Moving Forward
-- I need to figure out why the confirmation shows up as false instead of just not displaying anything.
+## Table of Contents
 
-## Screenshot
-![Work-scheduler-screenshot](./Develop/images/Work-scheduler-screenshot.png)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
 
-## Contribution
-Made with ❤️ by Gerus Hays
+## Installation 
+Ensure you have inquirer installed
+
+## Usage 
+Ensure you have the terminal open to enable prompts
+
+## License
+This is licensed under MIT
+
+
+## Contributing 
+TA's and tutor
+
+## Tests 
+Tested frequently throughout coding
+
+## Questions
+If you have any questions about this project you may reach me below at: </br> 
+gerushays</br>
+Also you may check out my github link below at: </br>
+https://github.com/GerusHays

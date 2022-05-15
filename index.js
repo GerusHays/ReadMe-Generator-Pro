@@ -148,8 +148,8 @@ ${data.installation}
 ${data.usage}
 
 ## License
-This is licensed under 
-${data.license}
+This is licensed under ${data.license}
+
 
 ## Contributing 
 ${data.contributing}
